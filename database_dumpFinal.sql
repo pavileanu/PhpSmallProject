@@ -31,7 +31,7 @@ CREATE TABLE `ocupatie` (
   `data_angajarii` date DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `persoana_id` (`persoana_id`),
-  CONSTRAINT `ocupatie_ibfk_1` FOREIGN KEY (`persoana_id`) REFERENCES `persoana` (`id`)
+  CONSTRAINT `ocupatie_ibfk_1` FOREIGN KEY (`persoana_id`) REFERENCES `persoana` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -41,7 +41,7 @@ CREATE TABLE `ocupatie` (
 
 LOCK TABLES `ocupatie` WRITE;
 /*!40000 ALTER TABLE `ocupatie` DISABLE KEYS */;
-INSERT INTO `ocupatie` VALUES (2,1,'barman1',100012,813,'2016-03-26'),(7,4,'ww1',331,331,'2016-04-22');
+INSERT INTO `ocupatie` VALUES (7,4,'ww1',331,331,'2016-04-22');
 /*!40000 ALTER TABLE `ocupatie` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -135,7 +135,7 @@ CREATE TABLE `persoana` (
 
 LOCK TABLES `persoana` WRITE;
 /*!40000 ALTER TABLE `persoana` DISABLE KEYS */;
-INSERT INTO `persoana` VALUES (1,'maria123','ioana123','Bucuresti123'),(4,'Ana1','Ana1','Oras1'),(11,'da','da','DAr');
+INSERT INTO `persoana` VALUES (4,'Ana1','Ana1','Oras1');
 /*!40000 ALTER TABLE `persoana` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -406,4 +406,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-04-30 17:27:51
+-- Dump completed on 2016-04-30 18:00:24

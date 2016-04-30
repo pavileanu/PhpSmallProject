@@ -38,7 +38,8 @@ PRIMARY KEY (ID)
 
 alter table Ocupatie
 add foreign key (persoana_id)
-references persoana(id);
+references persoana(id)
+on delete cascade;
 
 insert into Persoana(nume, prenume, oras)
 values('maria', 'ioana', 'Bucuresti'), ('george', 'andrei', 'Timisoara');
